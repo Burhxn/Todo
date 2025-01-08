@@ -1,0 +1,94 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 8px 12px 50px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  position: relative;
+}
+
+li::before {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-size: cover;
+  top: 12px;
+
+  left: 8px;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li span {
+  flex: 1;
+  margin-right: 10px;
+}
+
+li span.completed {
+  text-decoration: line-through;
+  color: #393636;
+  position: relative;
+  padding-left: 20px;
+}
+
+li span.completed::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-image: url(../assets/check-symbol-4794.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+li button {
+  margin: 6px 2px;
+  background-color: #db0f08fc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+li button.edit {
+  background-color: #103668d8;
+  &:hover {
+    background-color: darken(#0c3871, 1%);
+  }
+}
+
+li button.complete {
+  background-color: #50c928;
+  &:hover {
+    background-color: darken(#479b1b, 1%);
+  }
+}
+li button.delete:hover {
+  background-color: #ef2e2e;
+}
+li button.undo {
+  background-color: #b9bbc5;
+  &:hover {
+    background-color: #8aa48d;
+  }
+}
+
+li button:hover {
+  // padding: 5px 12px;
+}
