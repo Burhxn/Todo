@@ -1,3 +1,23 @@
+
+.task ul {
+  max-height: 300px; 
+  overflow-y: auto;  
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task ul li {
+  padding: 12px 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.task ul li:last-child {
+  border-bottom: none;
+}
+
+
+
 ul {
   list-style: none;
   padding: 0;
@@ -12,6 +32,9 @@ li {
   border-bottom: 1px solid #ddd;
   cursor: pointer;
   position: relative;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 li::before {
@@ -22,7 +45,6 @@ li::before {
   border-radius: 50%;
   background-size: cover;
   top: 12px;
-
   left: 8px;
 }
 
@@ -56,39 +78,56 @@ li span.completed::before {
 }
 
 li button {
-  margin: 6px 2px;
-  background-color: #db0f08fc;
-  color: white;
+  background: #e9e6dd;
   border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
+  border-radius: 6px;
+  padding: 10px 20px;
+  margin: 2px;
   cursor: pointer;
   font-size: 14px;
+  color: white;
+}
+
+li button.delete {
+  background: #c12222c0;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+li button.delete:hover {
+  background-color: #ef2e2e6e;
 }
 
 li button.edit {
-  background-color: #103668d8;
-  &:hover {
-    background-color: darken(#0c3871, 1%);
-  }
+  background: #becae293;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+li button.edit:hover {
+  background-color: #c1c9ebe7;
 }
 
 li button.complete {
-  background-color: #50c928;
-  &:hover {
-    background-color: darken(#479b1b, 1%);
-  }
-}
-li button.delete:hover {
-  background-color: #ef2e2e;
-}
-li button.undo {
-  background-color: #b9bbc5;
-  &:hover {
-    background-color: #8aa48d;
-  }
+  background: #9dcf9485;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
 }
 
-li button:hover {
-  // padding: 5px 12px;
+li button.complete:hover {
+  background-color: #53ce3d6e;
+}
+
+li button.undo {
+  background: #dec782e9;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+li button.undo:hover {
+  background-color: #8aa48d;
 }
